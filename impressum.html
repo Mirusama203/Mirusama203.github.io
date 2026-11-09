@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal notice (Impressum) | Mir Usama-Ul-Haq</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ECEFF3">
+<style>
+@font-face{font-family:"IBM Plex Sans";src:url(fonts/ibm-plex-sans-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url(fonts/ibm-plex-sans-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url(fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url(fonts/ibm-plex-sans-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+
+:root{
+  --paper:#ECEFF3; --paper2:#E1E6ED; --ink:#0F1720; --mute:#485365; --line:#BFC7D2;
+  --rig:#2340FF; --on-rig:#FFFFFF; --pass:#12834A;
+  --tr-bg:#0C1118; --tr-ink:#D3DBE6; --tr-dim:#7A8798; --tr-line:#222C39;
+  --display:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+:root[data-theme="dark"]{
+  --paper:#0E131A; --paper2:#141B24; --ink:#E8EDF4; --mute:#9CA8B9; --line:#2A3441;
+  --rig:#7B8FFF; --on-rig:#0A0F2E; --pass:#3DD68C;
+  --tr-bg:#080C11; --tr-line:#1E2733;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--body);font-size:1rem;line-height:1.65;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--rig);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;max-width:26ch}
+p{max-width:62ch}
+.lede{color:var(--mute);margin-top:14px}
+
+section{padding:72px 0 0}
+.rule::before{content:"";display:block;height:2px;background:var(--ink);margin-bottom:26px}
+.sechead{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:44px}
+.sechead .lede{margin:0}
+@media(max-width:820px){.sechead{grid-template-columns:1fr;gap:12px}}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+@media(max-width:460px){.brand{font-size:1rem}.seg button,.ico{padding:6px 9px}.tools{gap:6px}}
+.links{display:flex;gap:26px;font-size:.95rem}
+.links a{text-decoration:none;color:var(--mute);padding:4px 0;border-bottom:2px solid transparent}
+.links a:hover{color:var(--ink);border-color:var(--rig)}
+.tools{display:flex;gap:8px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button,.ico{font:inherit;font-size:.85rem;background:transparent;color:var(--mute);border:0;padding:6px 11px;cursor:pointer}
+.seg button.on{background:var(--ink);color:var(--paper);font-weight:600}
+.ico{border:1px solid var(--line);border-radius:6px}
+.ico:hover,.seg button:hover:not(.on){color:var(--ink)}
+#theme::before{content:"";display:block;width:14px;height:14px;border-radius:50%;border:2px solid currentColor;background:linear-gradient(90deg,currentColor 50%,transparent 50%)}
+.burger{display:none}
+@media(max-width:860px){
+  .links{display:none;position:absolute;top:62px;left:0;right:0;background:var(--paper);flex-direction:column;gap:6px;padding:16px 24px 20px;border-bottom:1px solid var(--line)}
+  .links.open{display:flex}
+  .burger{display:inline-block}
+}
+
+/* buttons */
+.btn{display:inline-block;font:inherit;font-weight:600;font-size:1rem;text-decoration:none;border-radius:6px;padding:13px 22px;cursor:pointer;border:2px solid var(--ink);transition:transform .15s,background .15s}
+.btn.solid{background:var(--rig);border-color:var(--rig);color:var(--on-rig)}
+.btn.solid:hover{transform:translateY(-2px)}
+.btn.line{background:transparent;color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--paper)}
+
+
+.legal{padding:48px 0 0;max-width:760px}
+.legal h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:8px;letter-spacing:-.03em}
+.legal h2{font-size:1.25rem;margin:34px 0 8px;max-width:none}
+.legal p,.legal li{max-width:68ch;margin-bottom:10px}
+.legal ul{padding-left:1.2em}
+.legal .note{color:var(--mute);font-size:.92rem;margin-top:30px;border-top:1px solid var(--line);padding-top:16px}
+footer.lf{margin:64px 0 36px;padding-top:20px;border-top:1px solid var(--line);font-size:.9rem;color:var(--mute);display:flex;gap:20px;flex-wrap:wrap}
+
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a href="index.html" class="brand">Mir Usama-Ul-Haq</a>
+  <div class="tools">
+    <div class="seg" role="group" aria-label="Language"><button class="on" id="en" aria-pressed="true">EN</button><button id="de" aria-pressed="false">DE</button></div>
+    <button class="ico" id="theme" aria-label="Switch light or dark theme"></button>
+  </div>
+</nav></div></header>
+<main class="wrap"><div class="legal">
+<p><a href="index.html" data-de="← Zurück zur Startseite">← Back to home</a></p>
+<h1 data-de="Impressum">Legal notice (Impressum)</h1>
+<h2 data-de="Angaben gemäß § 5 DDG">Information according to § 5 DDG</h2>
+<p>Mir Usama-Ul-Haq<br><span data-de="80809 München, Deutschland (vollständige Anschrift auf Anfrage per E-Mail)">80809 Munich, Germany (full postal address available on request by email)</span></p>
+<h2 data-de="Kontakt">Contact</h2>
+<p>E-Mail: <a href="mailto:mirusamaulhaq@gmail.com">mirusamaulhaq@gmail.com</a></p>
+<h2 data-de="Art der Website">Nature of this website</h2>
+<p data-de="Dies ist eine private, nicht kommerzielle Portfolio-Website zur Vorstellung meines beruflichen Werdegangs und meiner Projekte im Rahmen der Jobsuche.">This is a private, non-commercial portfolio website presenting my professional background and projects in the context of my job search.</p>
+<h2 data-de="Haftung für Inhalte">Liability for content</h2>
+<p data-de="Ich erstelle die Inhalte dieser Seite mit größter Sorgfalt. Für die Richtigkeit, Vollständigkeit und Aktualität kann ich jedoch keine Gewähr übernehmen.">I prepare the content of this site with great care. However, I cannot guarantee that it is correct, complete or up to date.</p>
+<h2 data-de="Haftung für Links">Liability for links</h2>
+<p data-de="Diese Seite enthält Links zu externen Websites (z. B. LinkedIn, GitHub). Auf deren Inhalte habe ich keinen Einfluss und übernehme dafür keine Gewähr. Für die Inhalte verlinkter Seiten ist stets der jeweilige Betreiber verantwortlich.">This site links to external websites (for example LinkedIn and GitHub). I have no influence on their content and accept no responsibility for it. The respective operator is always responsible for linked pages.</p>
+<h2 data-de="Marken">Trademarks</h2>
+<p data-de="Genannte Firmen-, Produkt- und Markennamen (z. B. BMW, Bosch, ECU-TEST, CANoe) gehören ihren jeweiligen Inhabern und werden nur zur Beschreibung meiner beruflichen Erfahrung verwendet.">Company, product and brand names mentioned (for example BMW, Bosch, ECU-TEST, CANoe) belong to their respective owners and are used only to describe my professional experience.</p>
+</div>
+<footer class="lf"><span>© 2026 Mir Usama-Ul-Haq</span><a href="impressum.html" data-de="Impressum">Legal notice</a><a href="datenschutz.html" data-de="Datenschutz">Privacy policy</a></footer>
+</main>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+$$('[data-de]').forEach(el=>el.dataset.en=el.innerHTML);
+function setLang(l){document.documentElement.lang=l;$$('[data-de]').forEach(el=>el.innerHTML=l==='de'?el.dataset.de:el.dataset.en);$('#en').classList.toggle('on',l==='en');$('#de').classList.toggle('on',l==='de');$('#en').setAttribute('aria-pressed',l==='en');$('#de').setAttribute('aria-pressed',l==='de');try{localStorage.setItem('lang',l)}catch(e){}}
+$('#en').onclick=()=>setLang('en');$('#de').onclick=()=>setLang('de');
+const root=document.documentElement;
+function setTheme(t){root.dataset.theme=t;$('meta[name=theme-color]').content=t==='dark'?'#0E131A':'#ECEFF3';try{localStorage.setItem('theme',t)}catch(e){}}
+$('#theme').onclick=()=>setTheme(root.dataset.theme==='dark'?'light':'dark');
+try{const t=localStorage.getItem('theme');if(t)setTheme(t);else if(matchMedia('(prefers-color-scheme: dark)').matches)setTheme('dark');const s=localStorage.getItem('lang');if(s==='de')setLang('de')}catch(e){}
+</script>
+</body>
+</html>
