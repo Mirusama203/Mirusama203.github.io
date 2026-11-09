@@ -170,6 +170,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:62px;ga
 .mbox li{margin-bottom:9px;max-width:62ch}
 .mbox li::marker{color:var(--rig)}
 .mbox .stack{margin-top:18px;font-weight:500;font-size:.95rem}
+.mbox .codelink{margin-top:22px}
 .x{position:absolute;right:14px;top:10px;font:inherit;font-size:1.6rem;line-height:1;background:none;border:0;color:var(--mute);cursor:pointer;padding:6px 10px}
 .x:hover{color:var(--ink)}
 @media(min-width:900px){.modal{align-items:center}.mbox{border-radius:10px}}
@@ -514,10 +515,12 @@ const P={
  iot:{en:["IoT agriculture monitoring system built on ESP32/ESP8266 microcontrollers with C++ firmware.","Data stored in a Microsoft Azure database.","Also upgraded legacy industrial automation with new sensors, actuators and C++ embedded algorithms."],
       de:["IoT-Agrarmonitoring auf Basis von ESP32/ESP8266 mit C++-Firmware.","Daten in einer Microsoft-Azure-Datenbank.","Außerdem industrielle Altanlagen mit neuen Sensoren, Aktoren und C++-Algorithmen modernisiert."]}
 };
+const CODE={thesis:{url:"https://github.com/Mirusama203/Master_Thesis"}};
 let lastFocus=null;
 function openProject(c){
   const k=c.dataset.key,title=c.querySelector('h3').innerHTML,kind=c.querySelector('.kind').innerHTML,stack=c.querySelector('.stack').textContent;
-  $('#mcontent').innerHTML=`<div class="kind">${kind}</div><h3>${title}</h3><ul>${P[k][lang].map(x=>`<li>${x}</li>`).join('')}</ul><div class="stack">${stack}</div>`;
+  const L=CODE[k],code=L?`<a class="btn line codelink" href="${L.url}" target="_blank" rel="noopener">${lang==='de'?'Code auf GitHub ansehen':'View code on GitHub'}</a>`:'';
+  $('#mcontent').innerHTML=`<div class="kind">${kind}</div><h3>${title}</h3><ul>${P[k][lang].map(x=>`<li>${x}</li>`).join('')}</ul><div class="stack">${stack}</div>${code}`;
   lastFocus=c;$('#modal').classList.add('open');$('#close').focus();
 }
 $$('.prow').forEach(c=>{
