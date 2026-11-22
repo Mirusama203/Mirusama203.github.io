@@ -411,6 +411,11 @@ textarea{min-height:130px;resize:vertical}
       <button class="chip" data-f="iot" data-de="Embedded/IoT">Embedded/IoT</button>
     </div>
     <div class="plist">
+      <article class="prow" tabindex="0" role="button" data-cat="test" data-key="bdd">
+        <div class="kind" data-de="Testautomatisierung, BDD, in Arbeit">Test automation, BDD, in progress</div>
+        <div><h3 data-de="BDD-Testframework: ein Test, beliebige Zielsysteme">BDD test framework: write once, run on any target</h3><p data-de="Gherkin-Szenarien mit Anforderungs-IDs, die über eine Port-/Adapter-Architektur gegen Fake-Backend, Simulator oder HiL-Prüfstand laufen können.">Gherkin scenarios tagged with requirement IDs that can run against a fake backend, a simulator or a HiL bench through a port/adapter design.</p><div class="stack">Python, pytest-bdd, Gherkin</div></div>
+        <div class="open" data-de="Details">Details</div>
+      </article>
       <article class="prow" tabindex="0" role="button" data-cat="sim" data-key="thesis">
         <div class="kind" data-de="Simulation, SiL, Web">Simulation, SiL, web</div>
         <div><h3 data-de="Masterarbeit: Simulationsumgebung für den Test vernetzter Fahrzeuge">Master's thesis: simulation environment for testing connected cars</h3><p data-de="Webbasierte SiL-Plattform zum Testen von Anwendungsschicht-Interaktionen in vernetzten Fahrzeugen.">A web-based SiL platform for testing application-layer interactions in connected vehicles.</p><div class="stack">FastAPI, Python, JavaScript</div></div>
@@ -547,6 +552,8 @@ $$('#filters .chip').forEach(b=>b.onclick=()=>{
 
 /* project details */
 const P={
+ bdd:{en:["Personal project (Nov 2026, in progress): write a test once in plain-English Gherkin and run it against different targets.","Scenarios tagged with requirement IDs (@REQ_101…) so each test links back to a requirement.","Port/adapter design: a RobotPort contract that every backend implements. Currently a fake robot backend; a SiL backend (my thesis simulator) and HiL bench are planned.","pytest-bdd step definitions; parallel runs with pytest-xdist and HTML reports with pytest-html.","Next: GitHub Actions CI and a requirement traceability report."],
+      de:["Persönliches Projekt (Nov 2026, in Arbeit): Ein Test wird einmal in Gherkin geschrieben und gegen unterschiedliche Zielsysteme ausgeführt.","Szenarien mit Anforderungs-IDs (@REQ_101…) getaggt, sodass jeder Test auf eine Anforderung zurückführt.","Port-/Adapter-Architektur: ein RobotPort-Vertrag, den jedes Backend umsetzt. Aktuell ein Fake-Roboter-Backend; SiL-Backend (mein Thesis-Simulator) und HiL-Prüfstand sind geplant.","pytest-bdd-Step-Definitionen; parallele Läufe mit pytest-xdist und HTML-Reports mit pytest-html.","Als Nächstes: GitHub-Actions-CI und ein Report zur Anforderungsrückverfolgbarkeit."]},
  thesis:{en:["A web-based simulation platform to test application-layer interactions in connected vehicles (Mar–Aug 2025, alongside full-time work).","FastAPI backend: command validation, state management, overrides, network delays and faults, timeouts and vehicle-type rules (EV, HEV, ICE, FCEV).","Two synchronised, role-separated frontends (Vehicle Manager and Vehicle Dashboard) for real-time commands and feedback.","Remote commands (lock/unlock, preconditioning, status) with edge-case handling on a modular SiL architecture, no hardware needed."],
          de:["Webbasierte Simulationsplattform zum Test von Anwendungsschicht-Interaktionen in vernetzten Fahrzeugen (Mär–Aug 2025, parallel zur Vollzeitstelle).","FastAPI-Backend: Befehlsvalidierung, Zustandsverwaltung, Overrides, Netzwerkverzögerungen und -fehler, Timeouts und fahrzeugtypspezifische Regeln (EV, HEV, ICE, FCEV).","Zwei synchronisierte, rollengetrennte Frontends (Vehicle Manager und Vehicle Dashboard) für Echtzeit-Befehle und Feedback.","Remote-Befehle (Ver-/Entriegeln, Vorkonditionierung, Status) mit Randfallbehandlung auf modularer SiL-Architektur, ohne Hardware."]},
  logtrace:{en:["Designed, documented and executed 200+ test cases in ECU-TEST.","Automated the complete Log & Trace test set: weekly regression went from 3–4 days of manual testing to a few hours per run.","Failure-cause analysis through ECU-TEST graphical reports and DLT/Ethernet trace analysis.","Stack: ECU-TEST, pytest, SOME/IP, UDS, DLT Viewer, Carmen, Xoraya."],
@@ -560,7 +567,7 @@ const P={
  iot:{en:["IoT agriculture monitoring system built on ESP32/ESP8266 microcontrollers with C++ firmware.","Data stored in a Microsoft Azure database.","Also upgraded legacy industrial automation with new sensors, actuators and C++ embedded algorithms."],
       de:["IoT-Agrarmonitoring auf Basis von ESP32/ESP8266 mit C++-Firmware.","Daten in einer Microsoft-Azure-Datenbank.","Außerdem industrielle Altanlagen mit neuen Sensoren, Aktoren und C++-Algorithmen modernisiert."]}
 };
-const CODE={thesis:{url:"https://github.com/Mirusama203/Master_Thesis"}};
+const CODE={thesis:{url:"https://github.com/Mirusama203/Master_Thesis"},bdd:{url:"https://github.com/Mirusama203/bdd-test-framework"}};
 let lastFocus=null;
 function openProject(c){
   const k=c.dataset.key,title=c.querySelector('h3').innerHTML,kind=c.querySelector('.kind').innerHTML,stack=c.querySelector('.stack').textContent;
