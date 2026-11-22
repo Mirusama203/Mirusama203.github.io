@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mir Usama-Ul-Haq — Test & Validation Engineer</title>
 <meta name="description" content="Portfolio of Mir Usama-Ul-Haq — Automotive Test Validation & Verification Engineer (Infotainment, ADAS, HiL, Test Automation) based in Munich.">
-<meta name="theme-color" content="#ECEFF3">
+<meta name="theme-color" content="#E6EAEE">
 <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/ibm-plex-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -16,17 +16,17 @@
 @font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
 
 :root{
-  --paper:#ECEFF3; --paper2:#E1E6ED; --ink:#0F1720; --mute:#485365; --line:#BFC7D2;
-  --rig:#2340FF; --on-rig:#FFFFFF; --pass:#12834A;
-  --tr-bg:#0C1118; --tr-ink:#D3DBE6; --tr-dim:#7A8798; --tr-line:#222C39;
+  --paper:#E6EAEE; --paper2:#DAE0E6; --ink:#0A1B2B; --mute:#44566A; --line:#B3BEC9;
+  --rig:#0A4FD6; --on-rig:#FFFFFF; --pass:#12834A; --amber:#FFA81F;
+  --tr-bg:#07131F; --tr-ink:#D3DBE6; --tr-dim:#7A8798; --tr-line:#222C39;
   --display:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 :root[data-theme="dark"]{
-  --paper:#0E131A; --paper2:#141B24; --ink:#E8EDF4; --mute:#9CA8B9; --line:#2A3441;
-  --rig:#7B8FFF; --on-rig:#0A0F2E; --pass:#3DD68C;
-  --tr-bg:#080C11; --tr-line:#1E2733;
+  --paper:#0B1620; --paper2:#112230; --ink:#E8EEF4; --mute:#9DB0C2; --line:#26394A;
+  --rig:#7FB0FF; --on-rig:#06131F; --pass:#3DD68C;
+  --tr-bg:#050D15; --tr-line:#1E3448;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
@@ -220,6 +220,42 @@ textarea{min-height:130px;resize:vertical}
 .foot{margin-top:64px;padding-top:22px;border-top:1px solid #222C39;font-size:.88rem;color:var(--tr-dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media(max-width:820px){.contact{grid-template-columns:1fr;gap:36px}}
 
+/* ===== redesign: instrument-panel look ===== */
+h2{font-size:clamp(1.9rem,3.6vw,2.8rem);letter-spacing:-.035em;max-width:22ch}
+.btn.solid{background:var(--amber);border-color:var(--amber);color:#0A1B2B}
+.btn.solid:hover{transform:translateY(-2px);box-shadow:0 6px 18px -6px color-mix(in srgb,var(--amber) 70%,transparent)}
+.sk p span.key{box-shadow:inset 0 -8px 0 color-mix(in srgb,var(--amber) 55%,transparent)}
+.metrics div{border-left-color:var(--amber)}
+.mbox{border-top-color:var(--amber)}
+.facts b{font-size:2.3rem;letter-spacing:-.04em}
+.prow:hover{background:var(--paper2);box-shadow:inset 4px 0 0 var(--amber)}
+:focus-visible{outline-color:var(--rig)}
+
+/* the scope: hero + run log as one bench instrument */
+#top{padding-top:28px}
+.scope{position:relative;isolation:isolate;overflow:hidden;border-radius:18px;padding:44px 44px 28px;color:#D6E3EE;
+  background:
+    linear-gradient(rgba(130,180,215,.05) 1px,transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg,rgba(130,180,215,.05) 1px,transparent 1px) 0 0/48px 48px,
+    radial-gradient(120% 90% at 20% 0%,#0E2740 0%,#07131F 62%);
+  border:1px solid #1E3448;box-shadow:0 0 0 6px color-mix(in srgb,var(--ink) 9%,transparent),0 30px 60px -30px rgba(7,19,31,.6)}
+#scope-cv{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.scope .hero h1{color:#fff;font-size:clamp(2.3rem,6.4vw,5.1rem);font-weight:700;letter-spacing:-.045em;line-height:1}
+.scope .role{color:var(--amber);font-size:clamp(1.05rem,2vw,1.35rem)}
+.scope .hero p.tag,.scope .where{color:#A9BBCB}
+.scope .status{background:#0B1D2E;border-color:#24425A;color:#D6E3EE;position:relative}
+.scope .btn.line{color:#E6EEF5;border-color:#4E6A82}
+.scope .btn.line:hover{background:#E6EEF5;color:#07131F;border-color:#E6EEF5}
+.scope .portrait::before{background:var(--amber)}
+.scope :focus-visible{outline-color:var(--amber)}
+.scope .log{margin-top:40px;background:rgba(5,13,21,.55);border:1px solid #1E3448;backdrop-filter:blur(3px)}
+.scope .log-r .tool{color:#7FC4FF}
+.scope .log-r .st{color:#3DE0A0}
+.scope .log-r.final{background:rgba(255,168,31,.08)}
+.scope .log-r.final .st{color:var(--amber)}
+@media(max-width:860px){.scope{padding:28px 22px 20px;border-radius:14px}}
+@media(max-width:460px){.scope{padding:22px 16px 16px}}
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .log-r{opacity:1;transform:none;transition:none}
@@ -258,6 +294,8 @@ textarea{min-height:130px;resize:vertical}
 <main>
 <section id="top">
   <div class="wrap">
+    <div class="scope">
+    <canvas id="scope-cv" aria-hidden="true"></canvas>
     <div class="hero">
       <div>
         <p class="status"><span class="dot" aria-hidden="true"></span><span data-de="Offen für neue Stellen · umzugsbereit in ganz Deutschland">Open to opportunities · willing to relocate within Germany</span></p>
@@ -282,6 +320,7 @@ textarea{min-height:130px;resize:vertical}
       <div class="log-r" aria-hidden="true"><span class="n">5</span><span class="tool">Report</span><span class="msg" data-de="Fehlerursachenanalyse, schnelleres Defect-Triage">Failure-cause analysis, faster defect triage</span><span class="st">OK</span></div>
       <div class="log-r final" aria-hidden="true"><span class="n">6</span><span class="tool">Result</span><span class="msg" data-de="Wöchentlicher Regressionsaufwand: 3–4 Tage manuell, jetzt wenige Stunden">Weekly regression effort: 3–4 days manual, now a few hours</span><span class="st">PASS</span></div>
       <div class="log-f" data-de="Vereinfachte Darstellung meiner Log-&amp;-Trace-Automatisierung im BMW-Infotainment-Projekt.">Simplified view of my Log &amp; Trace automation on the BMW infotainment project.</div>
+    </div>
     </div>
   </div>
 </section>
@@ -528,13 +567,44 @@ try{const s=localStorage.getItem('lang');if(s==='de')setLang('de')}catch(e){}
 
 /* theme */
 const root=document.documentElement;
-function setTheme(t){root.dataset.theme=t;$('meta[name=theme-color]').content=t==='dark'?'#0E131A':'#ECEFF3';try{localStorage.setItem('theme',t)}catch(e){}}
+function setTheme(t){root.dataset.theme=t;$('meta[name=theme-color]').content=t==='dark'?'#0B1620':'#E6EAEE';try{localStorage.setItem('theme',t)}catch(e){}}
 $('#theme').onclick=()=>setTheme(root.dataset.theme==='dark'?'light':'dark');
 try{const t=localStorage.getItem('theme');if(t)setTheme(t);else if(matchMedia('(prefers-color-scheme: dark)').matches)setTheme('dark')}catch(e){}
 
 /* menu */
 $('#burger').onclick=()=>{const o=$('#links').classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)};
 $$('#links a').forEach(a=>a.onclick=()=>{$('#links').classList.remove('open');$('#burger').setAttribute('aria-expanded',false)});
+
+
+/* scope trace: CAN-style bit stream + sensor line, drawn behind the hero */
+(function(){
+  const cv=$('#scope-cv');if(!cv)return;
+  const ctx=cv.getContext('2d'),box=cv.parentElement,BIT=28;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let w=0,h=0,t=0,raf=0,vis=true;
+  function size(){const d=Math.min(devicePixelRatio||1,2);w=box.clientWidth;h=box.clientHeight;cv.width=w*d;cv.height=h*d;ctx.setTransform(d,0,0,d,0,0);draw()}
+  const bit=i=>{const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x)>.5?1:0};
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    const first=Math.floor(t/BIT),off=t-first*BIT,y0=Math.max(70,h*.1),amp=16;
+    const lvl=b=>y0-(b?amp:0);
+    ctx.lineWidth=2;ctx.lineJoin='miter';ctx.strokeStyle='rgba(255,168,31,.5)';ctx.beginPath();
+    let px=-BIT-off,py=lvl(bit(first-1));ctx.moveTo(px,py);
+    for(let i=first;px<w+BIT;i++){px+=BIT;ctx.lineTo(px,py);py=lvl(bit(i));ctx.lineTo(px,py)}
+    ctx.stroke();
+    ctx.lineWidth=1.5;ctx.strokeStyle='rgba(127,196,255,.4)';ctx.beginPath();
+    const ya=y0+46;
+    for(let x=0;x<=w;x+=4){const u=(x+t)/70,y=ya+Math.sin(u)*9+Math.sin(u*2.7+1)*4;x?ctx.lineTo(x,y):ctx.moveTo(x,y)}
+    ctx.stroke();
+    ctx.font='11px "JetBrains Mono",monospace';ctx.textAlign='right';ctx.fillStyle='rgba(169,187,203,.55)';
+    ctx.fillText('CH1  CAN 500 kbit/s',w-22,y0-amp-12);
+  }
+  function loop(){t+=.55;draw();raf=vis&&!document.hidden?requestAnimationFrame(loop):0}
+  function play(){if(!raf&&!reduce)raf=requestAnimationFrame(loop)}
+  new ResizeObserver(size).observe(box);size();
+  if(!reduce){new IntersectionObserver(e=>{vis=e[0].isIntersecting;if(vis)play()}).observe(box);
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)play()});play()}
+})();
 
 /* run log: plays once on load */
 (function(){
